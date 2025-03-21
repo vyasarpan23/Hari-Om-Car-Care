@@ -43,6 +43,7 @@ closeBtns.forEach((btn) => {
   };
 });
 
+
 // Tab System
 const tabButtons = document.querySelectorAll(".tab-button");
 const tabContents = document.querySelectorAll(".tab-content");
@@ -84,22 +85,6 @@ if (typeof window !== "undefined" && typeof document !== "undefined") {
     return card;
   }
 }
-// Initialize Swiper
-const swiper = new Swiper(".swiper-container", {
-  loop: true,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
 
 // Smooth scroll for navigation links
 const navLinks = document.querySelectorAll(".nav-link");

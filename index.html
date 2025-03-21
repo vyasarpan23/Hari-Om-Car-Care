@@ -12,8 +12,6 @@
   <link rel="stylesheet" href="./assets/css/tailwind.min.css">
   <link rel="stylesheet" href="./assets/css/fontawesome.min.css">
   <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
-  <link rel="stylesheet" href="styles.css">
-  
 
 </head>
 
@@ -38,7 +36,7 @@
       <button class="bg-black text-yellow-300 px-5 py-2 text-lg font-semibold rounded-md hover:bg-gray-700" id="signupBtn">Signup</button>
       <button class="bg-black text-yellow-300 px-5 py-2 text-lg font-semibold rounded-md hover:bg-gray-700 hidden" id="logoutBtn">Logout</button>
 
-        <img src="./assets/image-person.png" alt="AutoCure Logo" class="h-10 w-10 hidden" id="clientImage">
+        <img src="./assets/image-person.png" alt="Hari ॐ Car Care Logo" class="h-10 w-10 hidden" id="clientImage">
       </div>
     </div>
   </div>
@@ -335,7 +333,7 @@
 
  
    <!-- Footer -->
-   <footer class="bg-black text-white py-10">
+   <footer id="contact" class="bg-black text-white py-10">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16"> <!-- Increased gap to 16 -->
       <!-- Left: Logo and About -->
       <div>
@@ -660,6 +658,23 @@
       });
     });
   </script>
-  
+  <script>
+  // Initialize Swiper
+  const swiper = new Swiper('.swiper-container', {
+    loop: true, // Enable looping
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 3000, // Auto-slide every 3 seconds
+      disableOnInteraction: false,
+    },
+  });
+</script>
 </body>
 </html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="employee.css">
+</head>
+<body class="bg-yellow-50">
+
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="logo flex items-center space-x-2">
+            <img src="../assets/logo.jpg" alt="Hari ॐ Car Care Logo" class="h-10 w-10">
+            <span class="text-black text-2xl font-bold">Hari ॐ Car Care</span>
+            </div>
+            <div class="flex items-center space-x-8"> 
+                <ul class="flex space-x-6">
+                    <li><a href="../index.html" class="text-black text-lg font-semibold hover:text-yellow-300">Home</a></li>
+                    <li><a href="#employeeDashboard" class="text-black text-lg font-semibold hover:text-yellow-300">Dashboard</a></li>
+                    <li><a href="#notifications" class="text-black text-lg font-semibold hover:text-yellow-300">Notifications</a></li>
+                    <li><a href="#tasks" class="text-black text-lg font-semibold hover:text-yellow-300">Tasks</a></li>
+
+                </ul>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-black text-yellow-300 px-5 py-2 text-lg font-semibold rounded-md hover:bg-gray-700" id="logoutBtn">Logout</button>
+                    <img src="../assets/image-person.png" alt="Hari ॐ Car Care Logo" class="h-10 w-10" id="clientImage">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+<!-- Profile Sidebar -->
+<div id="profileSidebar" class="fixed inset-y-0 right-0 shadow-lg w-60 p-4 hidden z-50">
+    <!-- Profile Header with Gray Background -->
+    <div class="bg-yellow-100 p-4 rounded-t-lg">
+        <img src="../assets/image-person.png" alt="Profile Photo" class="h-20 w-20 mx-auto mb-2 rounded-full" id="sidebarProfileImage">
+        <p class="text-center font-semibold" id="sidebarProfileName">John Doe</p>
+        <p class="text-center text-gray-600 text-sm" id="sidebarProfilePost">Employee</p>
+    </div>
+    <hr class="my-4">
+    <ul>
+        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer flex items-center">
+            <i class="fas fa-user mr-2"></i> View Profile
+        </li>
+        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer flex items-center">
+            <i class="fas fa-edit mr-2"></i> Edit Profile
+        </li>
+        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer flex items-center">
+            <i class="fas fa-cog mr-2"></i> Settings
+        </li>
+        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer flex items-center" id="sidebarLogoutBtn">
+            <i class="fas fa-sign-out-alt mr-2"></i> Logout
+        </li>
+    </ul>
+</div>
+
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="bg-gray-700 text-white w-64 p-4 hidden md:block fixed top-2 left-0 mt-16">
+            <ul>
+                <li><a href="#" class="block py-2 hover:bg-yellow-500 hover:text-black rounded">My Tasks</a></li>
+                <li><a href="#" class="block py-2 hover:bg-yellow-500 hover:text-black rounded">Completed Tasks</a></li>
+                <li><a href="#" class="block py-2 hover:bg-yellow-500 hover:text-black rounded">Pending Task</a></li>
+                <li><a href="#" class="block py-2 hover:bg-yellow-500 hover:text-black rounded">Completed Task</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Dashboard Area -->
+        <main class="flex-1 p-8 ml-64 mt-16 bg-yellow-50">
+            <h2 id="employeeDashboard" class="text-3xl font-semibold text-black mb-6">Employee Dashboard</h2>
+
+            <!-- Task Overview -->
+            <section class="overview grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="bg-yellow-100 shadow-lg rounded-lg p-6 transform transition-transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-black">Assigned Tasks</h3>
+                    <p class="text-2xl font-bold text-blue-600">10</p>
+                </div>
+                <div class="bg-yellow-100 shadow-lg rounded-lg p-6 transform transition-transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-black">Completed Tasks</h3>
+                    <p class="text-2xl font-bold text-green-600">7</p>
+                </div>
+                <div class="bg-yellow-100 shadow-lg rounded-lg p-6 transform transition-transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-black">Pending Tasks</h3>
+                    <p class="text-2xl font-bold text-yellow-600">3</p>
+                </div>
+            </section>
+
+<!-- Notifications Section -->
+<section id="notifications" class="mb-8">
+    <h2 class="text-2xl font-semibold text-black mb-4">Notifications</h2>
+    <div class="bg-yellow-100 shadow-lg rounded-lg p-6">
+        <ul class="space-y-4">
+            <li class="bg-yellow-50 p-4 rounded-lg shadow">
+                <p class="text-black font-semibold">New task assigned: Car Maintenance for MP09AB1234</p>
+                <p class="text-black text-sm">2 hours ago</p>
+            </li>
+            <li class="bg-yellow-50 p-4 rounded-lg shadow">
+                <p class="text-black font-semibold">Task completed: Part Replacement for MP09CD5678</p>
+                <p class="text-black text-sm">1 day ago</p>
+            </li>
+            <li class="bg-yellow-50 p-4 rounded-lg shadow">
+                <p class="text-black font-semibold">Reminder: Complete the pending tasks by end of the week</p>
+                <p class="text-black text-sm">3 days ago</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- Task List Section -->
+<section id="tasks" class="mb-8">
+    <h2 class="text-2xl font-semibold text-black mb-4">Task List</h2>
+    <div class="bg-yellow-100 shadow-lg rounded-lg p-6">
+        <h3 class="text-xl font-semibold text-black">Today's Tasks</h3>
+        <table class="w-full mt-4 table-auto">
+            <thead>
+                <tr class="border-b text-black">
+                    <th class="py-2 px-4 text-left">Task</th>
+                    <th class="py-2 px-4 text-left">Car Number</th>
+                    <th class="py-2 px-4 text-left">Owner</th>
+                    <th class="py-2 px-4 text-left">Contact</th>
+                    <th class="py-2 px-4 text-left">Status</th>
+                </tr>
+            </thead>
+            <tbody class="text-black">
+                <tr class="border-b">
+                    <td class="py-2 px-4">Car Maintenance</td>
+                    <td class="py-2 px-4">MP09AB1234</td>
+                    <td class="py-2 px-4">Rahul Sharma</td>
+                    <td class="py-2 px-4">+91 98765 43210</td>
+                    <td class="py-2 px-4">
+                        <button class="bg-yellow-500 text-white px-3 py-1 rounded">
+                            <i class="fas fa-spinner"></i> In Progress
+                        </button>
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td class="py-2 px-4">Part Replacement</td>
+                    <td class="py-2 px-4">MP09CD5678</td>
+                    <td class="py-2 px-4">Neha Verma</td>
+                    <td class="py-2 px-4">+91 97654 32109</td>
+                    <td class="py-2 px-4">
+                        <button class="bg-green-500 text-white px-3 py-1 rounded">
+                            <i class="fas fa-check"></i> Completed
+                        </button>
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td class="py-2 px-4">Part Replacement</td>
+                    <td class="py-2 px-4">MP09CD6969</td>
+                    <td class="py-2 px-4">Harsh Mandloi</td>
+                    <td class="py-2 px-4">+91 90604 38809</td>
+                    <td class="py-2 px-4">
+                        <button class="bg-gray-500 text-white px-3 py-1 rounded">
+                            <i class="fas fa-clock"></i> To Be Done
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+        </main>
+    </div>
+
+<!-- Footer -->
+<footer id="contact" class="bg-black text-white py-10" style="margin-left: 16rem;">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16"> <!-- Increased gap to 16 -->
+      <!-- Left: Logo and About -->
+      <div>
+        <div class="flex flex-col items-center space-y-4"> <!-- Stack logo and name vertically -->
+          <img src="../assets/logo.jpg" alt="Hari ॐ Car Care Logo" style="height: 10rem; width: auto;"> <!-- Increased logo size -->
+          <span class="text-4xl font-bold text-center">Hari ॐ Car Care</span> <!-- Centered the name -->
+        </div>
+        <p class="mt-3 text-white text-sm text-center">
+          Hari ॐ Car Care provides premium quality car services at affordable prices. We ensure real-time updates for a
+          smooth and transparent service experience.
+        </p>
+      </div>
+
+      <!-- Middle: Services & Links -->
+      <div class="grid grid-cols-2 gap-16"> <!-- Increased gap between Services and Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Services</h3> <!-- Increased margin-bottom -->
+          <ul class="text-white space-y-3"> <!-- Increased space between list items -->
+            <li class="whitespace-nowrap">• Periodic Maintenance</li>
+            <li>• Dent & Paint</li>
+            <li>• Bumper Repair</li>
+            <li>• Accidental Repair</li>
+            <li>• Scratch Removal</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3> <!-- Increased margin-bottom -->
+          <ul class="text-white space-y-3"> <!-- Increased space between list items -->
+            <li><a href="#home" class="hover:text-white">• Home</a></li>
+            <li><a href="#about" class="hover:text-white">• About</a></li>
+            <li><a href="#contact" class="hover:text-white">• FAQ</a></li>
+            <li><a href="#home" class="hover:text-white">• Blog</a></li>
+            <li><a href="#" class="hover:text-white" id="footerContactBtn">• Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right: Contact Details -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-4">Contact</h3> <!-- Increased margin-bottom -->
+
+        <div class="flex items-center gap-2 text-white mb-3">
+          <i class="fas fa-map-marker-alt text-red-500"></i>
+          <a href="https://www.google.com/maps/place/Hari+Om+Car+%26+Key+care/@22.6545468,75.8669296,15z/data=!4m10!1m2!2m1!1shari+om+car+care+indore!3m6!1s0x3962fb585d42ae7f:0x658e871032f35ff0!8m2!3d22.6545468!4d75.885984!15sChdoYXJpIG9tIGNhciBjYXJlIGluZG9yZeABAA!16s%2Fg%2F11y435w318?entry=ttu&g_ep=EgoyMDI1MDMxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="hover:underline text-gray-300">
+              Location
+          </a>
+      </div>
+      
+        
+        <div class="flex items-center gap-2 text-white mb-3">
+            <i class="fas fa-envelope text-red-500"></i>
+            <span>contact@hariom_carcare.com</span>
+        </div>
+        
+        <div class="flex items-center gap-2 text-white mb-3">
+            <i class="fas fa-phone text-red-500"></i>
+            <span>+91 99933 93151</span>
+        </div>
+        <div class="flex items-center gap-2 text-white mb-3">
+            <i class="fas fa-phone text-red-500"></i>
+            <span>+91 90091 53151</span>
+        </div>
+        
+        <h3 class="text-lg font-semibold text-white mt-8 mb-4">FOLLOW US:</h3>
+        <!-- Increased margin-top and margin-bottom -->
+
+        <!-- Social Icons -->
+        <div class="flex space-x-6 mt-4"> <!-- Increased space between icons -->
+          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:text-green-500">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+        
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-500">
+            <i class="fab fa-instagram fa-2x"></i>
+        </a>
+        
+        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-500">
+            <i class="fab fa-twitter fa-2x"></i>
+        </a>
+        
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700">
+            <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+        
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="text-red-500 hover:text-red-600">
+            <i class="fab fa-youtube fa-2x"></i>
+        </a>
+        
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="mt-12 border-t border-gray-700 text-center pt-6 text-white">
+      <!-- Increased margin-top and padding-top -->
+      <p>&copy; 2025 Hari ॐ Car Care. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+    <!-- JavaScript -->
+    <script src="employee.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
