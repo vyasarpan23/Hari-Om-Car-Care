@@ -489,11 +489,10 @@ transform: translateY(0); /* Reset on click */
 }
 
 /* Swiper pagination bullets */
-.swiper-pagination-bullet {
-  background-color: #c3b041; /* Default color (gold) */
+
+
+.swiper-pagination-bullet-active {
+  background-color: #c3b041 !important; /* Active bullet color */
   transition: background-color 0.3s ease;
 }
-
-
-
 
